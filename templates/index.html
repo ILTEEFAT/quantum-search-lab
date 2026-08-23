@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Quantum Search Lab</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- =========================================
+         BACKGROUND DECORATION
+    ========================================== -->
+
+    <div class="noise"></div>
+
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+            <span class="brand-mark">
+                Q
+            </span>
+
+            <span class="brand-name">
+                Quantum Search Lab
+            </span>
+        </div>
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            <span>
+                Simulator Online
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="hero">
+
+            <div class="hero-meta">
+                QUANTUM COMPUTING EXPERIMENT
+            </div>
+
+
+            <h1>
+
+                Classical
+
+                <span class="hero-vs">
+                    vs
+                </span>
+
+                <span class="quantum-word">
+                    Quantum
+                </span>
+
+                Search
+
+            </h1>
+
+
+            <div class="hero-bottom">
+
+                <p class="hero-description">
+
+                    Explore how a classical linear search compares
+                    with Grover's quantum search algorithm —
+                    using the same dataset, target and problem.
+
+                </p>
+
+
+                <div class="hero-index">
+
+                    <span>
+                        EXPERIMENT
+                    </span>
+
+                    <strong>
+                        01
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="scroll-indicator">
+
+                <span class="scroll-line"></span>
+
+                SCROLL TO EXPLORE
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             EXPERIMENT SECTION
+        ========================================== -->
+
+        <section class="experiment-section">
+
+            <div class="experiment-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        EXPERIMENT 01
+                    </span>
+
+                    <h2>
+                        Search Laboratory
+                    </h2>
+
+                    <p>
+                        Configure the problem.
+                        Then let both algorithms compete.
+                    </p>
+
+                </div>
+
+
+                <div class="experiment-number">
+                    01
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 INPUT PANEL
+            ====================================== -->
+
+            <div class="input-panel">
+
+                <div class="field">
+
+                    <label for="data">
+                        DATASET
+                    </label>
+
+                    <input
+                        id="data"
+                        type="text"
+                        value="12, 45, 7, 23, 91, 34, 8"
+                        placeholder="12, 45, 7, 23..."
+                        autocomplete="off"
+                    >
+
+                    <span class="field-hint">
+                        Enter comma-separated numbers
+                    </span>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="target">
+                        TARGET VALUE
+                    </label>
+
+                    <input
+                        id="target"
+                        type="number"
+                        value="23"
+                        placeholder="23"
+                    >
+
+                    <span class="field-hint">
+                        The value both algorithms will search for
+                    </span>
+
+                </div>
+
+
+
+                <div class="run-area">
+
+                    <button
+                        type="button"
+                        id="searchButton"
+                    >
+
+                        <span>
+                            Run Search
+                        </span>
+
+                        <span class="button-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <span class="run-note">
+                        ENTER ↵ TO RUN
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 ALGORITHM CARDS
+            ====================================== -->
+
+            <div class="algorithm-grid">
+
+
+                <article class="algorithm-card classical-card">
+
+                    <div class="card-top">
+
+                        <span class="card-label">
+                            CLASSICAL COMPUTING
+                        </span>
+
+                        <span class="card-symbol">
+                            C
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Linear Search
+                    </h3>
+
+                    <p>
+                        Checks elements one by one until
+                        the target is found.
+                    </p>
+
+                    <div class="complexity">
+
+                        <span>
+                            SEARCH COMPLEXITY
+                        </span>
+
+                        <strong>
+                            O(n)
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="algorithm-card quantum-card">
+
+                    <div class="card-top">
+
+                        <span class="card-label">
+                            QUANTUM COMPUTING
+                        </span>
+
+                        <span class="card-symbol">
+                            Q
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Grover's Algorithm
+                    </h3>
+
+                    <p>
+                        Uses amplitude amplification to
+                        increase the probability of measuring
+                        the desired state.
+                    </p>
+
+                    <div class="complexity">
+
+                        <span>
+                            SEARCH COMPLEXITY
+                        </span>
+
+                        <strong>
+                            O(√n)
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             RESULTS
+        ========================================== -->
+
+        <section class="results-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    EXPERIMENT RESULTS
+                </span>
+
+                <h2>
+                    Search Performance
+                </h2>
+
+                <p>
+                    A visual comparison of the two approaches.
+                </p>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 METRIC STRIP
+            ====================================== -->
+
+            <div class="metric-strip">
+
+                <div class="metric">
+
+                    <span>
+                        TARGET
+                    </span>
+
+                    <strong id="resultTarget">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="metric">
+
+                    <span>
+                        CLASSICAL COST
+                    </span>
+
+                    <strong id="classicalCost">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="metric">
+
+                    <span>
+                        QUANTUM ITERATIONS
+                    </span>
+
+                    <strong id="quantumIterations">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="metric highlight-metric">
+
+                    <span>
+                        RESULT
+                    </span>
+
+                    <strong id="searchResult">
+                        READY
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 GRAPH SECTION
+            ====================================== -->
+
+            <div class="visual-section">
+
+                <div class="visual-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            VISUAL ANALYSIS
+                        </span>
+
+                        <h3>
+                            Search Visualization
+                        </h3>
+
+                        <p>
+                            Watch how the search progresses through
+                            the dataset and how quantum probability
+                            concentrates around the target.
+                        </p>
+
+                    </div>
+
+
+                    <div class="visual-controls">
+
+                        <button
+                            class="visual-tab active"
+                            type="button"
+                        >
+                            Classical
+                        </button>
+
+                        <button
+                            class="visual-tab"
+                            type="button"
+                        >
+                            Quantum
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FUTURE GRAPH SLOT -->
+
+                <div
+                    class="graph-container"
+                    id="searchGraph"
+                >
+
+                    <div class="graph-placeholder">
+
+                        <div class="graph-icon">
+                            +
+                        </div>
+
+                        <span>
+                            SEARCH GRAPH
+                        </span>
+
+                        <p>
+                            Classical search progression
+                            will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 SIDE BY SIDE GRAPH SLOTS
+            ====================================== -->
+
+            <div class="graph-grid">
+
+
+                <div class="graph-card">
+
+                    <div class="graph-card-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                CLASSICAL
+                            </span>
+
+                            <h3>
+                                Linear Scan
+                            </h3>
+
+                        </div>
+
+                        <span class="graph-number">
+                            01
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="mini-graph"
+                        id="classicalChart"
+                    >
+
+                        <div class="graph-placeholder small">
+
+                            <div class="graph-icon">
+                                C
+                            </div>
+
+                            <span>
+                                CLASSICAL GRAPH
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="graph-card quantum-graph-card">
+
+                    <div class="graph-card-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                QUANTUM
+                            </span>
+
+                            <h3>
+                                Grover Probability
+                            </h3>
+
+                        </div>
+
+                        <span class="graph-number">
+                            02
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="mini-graph"
+                        id="quantumChart"
+                    >
+
+                        <div class="graph-placeholder small">
+
+                            <div class="graph-icon">
+                                Q
+                            </div>
+
+                            <span>
+                                QUANTUM GRAPH
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 COMPARISON
+            ====================================== -->
+
+            <div class="comparison-section">
+
+                <div class="comparison-heading">
+
+                    <span class="eyebrow">
+                        SIDE-BY-SIDE ANALYSIS
+                    </span>
+
+                    <h2>
+                        Classical
+                        <span>vs</span>
+                        Quantum
+                    </h2>
+
+                </div>
+
+
+                <div class="comparison-table">
+
+                    <div class="table-row table-header">
+
+                        <div>
+                            METRIC
+                        </div>
+
+                        <div>
+                            CLASSICAL
+                        </div>
+
+                        <div>
+                            QUANTUM
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-row">
+
+                        <div>
+                            Search Method
+                        </div>
+
+                        <div>
+                            Linear scan
+                        </div>
+
+                        <div class="quantum-text">
+                            Amplitude amplification
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-row">
+
+                        <div>
+                            Target Found
+                        </div>
+
+                        <div id="classicalFound">
+                            —
+                        </div>
+
+                        <div
+                            id="quantumFound"
+                            class="quantum-text"
+                        >
+                            —
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-row">
+
+                        <div>
+                            Search Cost
+                        </div>
+
+                        <div id="classicalSearchCost">
+                            —
+                        </div>
+
+                        <div
+                            id="quantumSearchCost"
+                            class="quantum-text"
+                        >
+                            O(√n)
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             EXPLANATION
+        ========================================== -->
+
+        <section class="explanation-section">
+
+
+            <div class="explanation-card classical-explanation">
+
+                <span class="step-number">
+                    01
+                </span>
+
+                <span class="eyebrow">
+                    CLASSICAL COMPUTING
+                </span>
+
+                <h2>
+                    Linear Search
+                </h2>
+
+                <p>
+                    The algorithm checks each element from
+                    the beginning of the dataset until it
+                    encounters the target.
+                </p>
+
+                <div class="formula">
+                    O(n)
+                </div>
+
+            </div>
+
+
+
+            <div class="explanation-card quantum-explanation">
+
+                <span class="step-number">
+                    02
+                </span>
+
+                <span class="eyebrow">
+                    QUANTUM COMPUTING
+                </span>
+
+                <h2>
+                    Grover's Algorithm
+                </h2>
+
+                <p>
+                    Grover's algorithm increases the probability
+                    of measuring the desired state through
+                    quantum amplitude amplification.
+                </p>
+
+                <div class="formula">
+                    O(√n)
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             FINAL STATEMENT
+        ========================================== -->
+
+        <section class="statement-section">
+
+            <span class="eyebrow">
+                THE IDEA
+            </span>
+
+            <h2>
+
+                Same problem.
+
+                <br>
+
+                <span>
+                    Different way of thinking.
+                </span>
+
+            </h2>
+
+            <p>
+                Classical computing searches through possibilities.
+                Quantum computing changes how those possibilities
+                are represented and explored.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+            Quantum Search Lab
+        </div>
+
+        <div class="footer-center">
+            Built for quantum algorithm visualization
+        </div>
+
+        <div class="footer-meta">
+            CSE / QUANTUM COMPUTING
+        </div>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
