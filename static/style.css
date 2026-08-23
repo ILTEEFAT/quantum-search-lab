@@ -2060,3 +2060,224 @@ body {
         padding: 30px 22px;
     }
 }
+/* ================================
+   PROFESSIONAL PROJECT FOOTER
+   ================================ */
+
+/* =========================================================
+   QUANTUM SEARCH LAB — FOOTER
+   Minimal research-interface aesthetic
+   ========================================================= */
+
+/* =========================================================
+   QUANTUM SEARCH LAB — FULL WIDTH FOOTER
+   ========================================================= */
+
+/* =========================================================
+   QUANTUM SEARCH LAB — FOOTER
+   Full-width / Low-height / Editorial / Crimson Accent
+   ========================================================= */
+
+/* =========================================================
+   SIMPLE EDITORIAL FOOTER
+   ========================================================= */
+
+.site-footer {
+    width: 100%;
+    margin-top: 0;
+    padding: 22px 7vw;
+
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    background: #f4f1eb;
+    color: #17171b;
+
+    border-top: 1px solid rgba(23, 23, 27, 0.12);
+
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+/* Thin crimson accent */
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 7vw;
+
+    width: 90px;
+    height: 2px;
+
+    background: #b52b45;
+}
+
+
+/* ---------------------------------------------------------
+   LEFT
+   --------------------------------------------------------- */
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    flex: 1;
+}
+
+.footer-brand {
+    margin: 0;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    color: #17171b;
+}
+
+.footer-subtitle {
+    margin: 0;
+    padding-left: 16px;
+
+    font-size: 10px;
+    letter-spacing: 0.08em;
+
+    color: #77747a;
+
+    border-left: 1px solid rgba(23, 23, 27, 0.18);
+}
+
+
+/* ---------------------------------------------------------
+   CENTER — AUTHOR
+   --------------------------------------------------------- */
+
+.footer-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 0;
+
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    white-space: nowrap;
+}
+
+.developed-by {
+    margin: 0;
+
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: #8a878c;
+}
+
+.footer-author strong {
+    margin: 0;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+
+    color: #b52b45;
+}
+
+
+/* Small separator */
+
+.footer-author::before {
+    content: "•";
+
+    font-size: 13px;
+
+    color: #b52b45;
+}
+
+
+/* ---------------------------------------------------------
+   RIGHT
+   --------------------------------------------------------- */
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 18px;
+
+    flex: 1;
+
+    font-size: 9px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+
+    color: #77747a;
+
+    text-align: right;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+    .site-footer {
+        padding: 22px 24px;
+
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 14px 24px;
+    }
+
+    .footer-left,
+    .footer-right {
+        flex: none;
+    }
+
+    .footer-left {
+        justify-content: center;
+    }
+
+    .footer-right {
+        justify-content: center;
+    }
+}
+/* ===== BUTTON CLICK FIX ===== */
+
+.search-section,
+.search-form,
+.run-search,
+#runSearch,
+button {
+    position: relative;
+    z-index: 1000;
+    pointer-events: auto !important;
+}
+
+/* Prevent decorative/background layers from blocking clicks */
+body::before,
+body::after,
+main::before,
+main::after,
+section::before,
+section::after {
+    pointer-events: none !important;
+}
